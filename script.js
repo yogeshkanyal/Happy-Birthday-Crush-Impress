@@ -228,9 +228,11 @@ function nextStep() {
 // Function to save name
 function saveName() {
     const nameInputEl = document.getElementById('nameInput');
-    const nameInput = nameInputEl ? nameInputEl.value.trim() : '';
-    if (nameInput) {
-        userName = nameInput;
+    const nameInput = nameInputEl ? nameInputEl.value.trim().toLowerCase() : '';
+    const correctAnswer = 'priya';
+
+    if (nameInput === correctAnswer) {
+        userName = 'Priya';
         document.getElementById('displayName').textContent = userName;
         document.getElementById('finalName').textContent = userName;
         document.getElementById('heartName').textContent = userName;
@@ -253,7 +255,7 @@ function saveName() {
             yoyo: true,
             repeat: 1
         });
-        alert("Please enter your beautiful name to continue");
+        alert("That is not the right answer. Please type priya to continue.");
     }
 }
 
